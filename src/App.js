@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Todos from './Todos';
 import AddTodo from './AddForm';
 import './app.css';
+import Navbar from './components/Navbar';
+import {Route} from 'react-router-dom'
+import Home from './components/Home';
+import About from './components/About';
 
 class App extends Component {
 	state = {
@@ -25,6 +29,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
+				<Navbar />
+				<Route exact path="/" component={Home} />
+				<Route path="/about" component={About} />
 				<section className="hero is-primary is-bold">
 					<div className="hero-body">
 						<div className="container">
